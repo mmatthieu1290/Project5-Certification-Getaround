@@ -1,0 +1,4 @@
+streamlit==1.10.0
+pickle
+math
+numpy==1.21.5
