@@ -1,5 +1,5 @@
-streamlit==1.10.0
+streamlit
 pickle
 math
-pandas==1.4.2
+pandas
 sklearn
