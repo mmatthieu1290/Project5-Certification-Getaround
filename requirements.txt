@@ -1,6 +1,5 @@
 streamlit
 pip==22.2.2
-pickle
 math
 pandas
 sklearn
