@@ -2,3 +2,4 @@ streamlit==1.10.0
 pickle
 math
 pandas==1.4.2
+sklearn
