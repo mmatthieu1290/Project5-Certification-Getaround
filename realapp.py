@@ -18,32 +18,27 @@ with open('preprocessor.pkl','rb') as pre:
 
 ### Config
 st.set_page_config(
-    page_title="Web-detection",
+    page_title="App-car-rental",
     layout="wide"
 )
 
 ### HEADER
-st.title('Web Application to Project 6')
-st.header("A  machine learning application to predict ")
-st.markdown(""" This application allow to classify  
-""")
-st.title("How to use it")
-st.markdown("*First chose the start and the end of rent")
-
-st.markdown("*After chose the model,...")  
-
-
-st.subheader('Prediction of...')
-
+st.title('')
+st.header("Influence of threhold")
 
 st.sidebar.header("")
 
 
-model_key = st.sidebar.selectbox("Model of the car",['Citroën', 'Peugeot', 'PGO', 'Renault', 'Audi', 'BMW', 'Ford',
-       'Mercedes', 'Opel', 'Porsche', 'Volkswagen', 'KIA Motors',
-       'Alfa Romeo', 'Ferrari', 'Fiat', 'Lamborghini', 'Maserati',
-       'Lexus', 'Honda', 'Mazda', 'Mini', 'Mitsubishi', 'Nissan', 'SEAT',
-       'Subaru', 'Suzuki', 'Toyota', 'Yamaha'])
+model_key = st.sidebar.selectbox("Model of the car",['Citroën',
+ 'Peugeot',
+ 'Renault',
+ 'Audi',
+ 'BMW',
+ 'Mercedes',
+ 'Volkswagen',
+ 'Mitsubishi',
+ 'Nissan',
+ 'Toyota'])
 
 mileage = st.sidebar.slider("mileage",0,500000) 
 
@@ -59,6 +54,26 @@ car_type = st.sidebar.selectbox("Car type",\
     ['convertible', 'coupe', 'estate', 'hatchback', 'sedan',
        'subcompact', 'suv', 'van'])
 
+
+
+
+threshold = st.slider("Threshold between two rents in minutes",0,700)
+
+mean_time_losse = round(max([0,float(time_losse.predict([[threshold,threshold**2]]))]),0)
+
+time_of_rent = st.number_input("Time of rent in days",1)
+
+mean_relative_time_losse = mean_time_losse/(24*60*time_of_rent)
+
+st.write("Average loss of rental time:",mean_time_losse," minutes per rent. It represents",\
+    round(100*mean_relative_time_losse,2),'% of the total time of rent.')
+
+mean_problem = exp(float(estimator_problems.predict([[threshold]])))
+
+st.write("We estimate that in ",round(100*mean_problem,2)," % of the rent the delay\
+    of the checkout will be greater that time delta with following rate")
+
+st.header("Estimation of the price of rent.")    
 
 private_parking_available = st.checkbox('Private parking available')
 has_gps = st.checkbox('Has gps')
@@ -88,32 +103,10 @@ X = preprocessor.transform(df_features)
 
 price_estimated = pricing.predict(X)
 
-
-time_of_rent = st.number_input("Time of rent in days",1)
-
 total_price = round(float(price_estimated*time_of_rent))
 
 st.write("The price estimated of the rent is ",total_price,"$.")
 
-threshold = st.slider("Threshold between two rents in minutes",0,700)
-
-mean_time_losse = round(max([0,float(time_losse.predict([[threshold,threshold**2]]))]),0)
-
 money_loss = float(price_estimated)*mean_time_losse/(24*60)
 
-money_loss_relative = money_loss/total_price
-
-st.write("With a threshold equal to ",threshold,'minutes, the owner will suffer an\
-    average loss of ',round(money_loss,2),'which reprensents in average', 
-    round(100*money_loss_relative,2),'% of the total income')
-
-mean_problem = exp(float(estimator_problems.predict([[threshold]])))
-
-st.write("We estimate that in ",round(100*mean_problem,2)," % of the rent the delay\
-    of the checkout will be greater that time delta with following rate")
-
-
-
-
-
-
+st.write("The loss with this threshold is estimated to:",money_loss,"$.")
