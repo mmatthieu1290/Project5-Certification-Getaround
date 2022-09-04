@@ -7,7 +7,7 @@ import pandas as pd
 with open('time_losse.pkl','rb') as tl:
     time_losse = pickle.load(tl)
 
-with open('estimator_problems_logaritm.pkl','rb') as est_problem:
+with open('estimator_problems_inverse.pkl','rb') as est_problem:
     estimator_problems = pickle.load(est_problem) 
 
 with open('pricing.pkl','rb') as prices_estimator:
@@ -68,7 +68,7 @@ mean_relative_time_losse = mean_time_losse/(24*60*time_of_rent)
 st.write("Average loss of rental time:",mean_time_losse," minutes per rent. It represents",\
     round(100*mean_relative_time_losse,2),'% of the total time of rent.')
 
-mean_problem = exp(float(estimator_problems.predict([[threshold]])))
+mean_problem = 1/(float(estimator_problems.predict([[threshold]])))
 
 st.write("We estimate that in ",round(100*mean_problem,2)," % of the rent the delay\
     of the checkout will be greater that time delta with following rate")
