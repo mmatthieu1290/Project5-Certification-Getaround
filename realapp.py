@@ -112,4 +112,6 @@ st.write("The price estimated of the rent is ",total_price,"$.")
 
 money_loss = float(price_estimated)*mean_time_losse/(24*60)
 
+money_loss = round(money_loss,2)
+
 st.write("The loss with this threshold is estimated to:",money_loss,"$.")
