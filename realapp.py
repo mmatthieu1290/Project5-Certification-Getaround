@@ -65,13 +65,16 @@ time_of_rent = st.number_input("Time of rent in days",1)
 
 mean_relative_time_losse = mean_time_losse/(24*60*time_of_rent)
 
-st.write("Average loss of rental time:",mean_time_losse," minutes per rent. It represents",\
-    round(100*mean_relative_time_losse,2),'% of the total time of rent.')
+st.write("On average",mean_time_losse," rental minutes will be lost per rental.\
+     This represents",\
+    round(100*mean_relative_time_losse,2),'% of the total rental time.')
 
 mean_problem = 1/(float(estimator_problems.predict([[threshold]])))
 
-st.write("We estimate that in ",round(100*mean_problem,2)," % of the rent the delay\
-    of the checkout will be greater that time delta with following rate")
+mean_problem = min([mean_problem,0.12])
+
+st.write("We estimate that in ",round(100*mean_problem,2)," % of rentals, \
+    the car will be returned after the scheduled time of the next rental.")
 
 st.header("Estimation of the price of rent.")    
 
