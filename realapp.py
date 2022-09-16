@@ -35,7 +35,6 @@ threshold = st.sidebar.slider("Threshold between two rents in minutes",0,700)
 
 time_of_rent = st.sidebar.number_input("Time of rent in days",1)
 
-
 mean_time_losse = round(max([0,float(time_losse.predict([[threshold,threshold**2]]))]),0)
 
 connexion = sqlite3.connect('db_deployment.db')
@@ -68,12 +67,12 @@ ax1.plot(x, np.max([np.array(y1).reshape((-1,1)),np.zeros((len(y1),1))],axis = 0
 ax1.plot(threshold*np.ones(400),np.linspace(-10,430,400),c = 'r')
 ax2.plot(x, 100*y2, 'b-')
 ax1.scatter(threshold,mean_time_losse,c='g')
-ax1.text(x=threshold-70,y=mean_time_losse+10,s=f'{mean_time_losse}')
+ax1.text(x=threshold-70,y=mean_time_losse+10,s=f'{mean_time_losse}',c='g')
 ax2.scatter(threshold,100*mean_problem,c = 'b')
-ax2.text(x=threshold+10,y=100*mean_problem+0.1,s=f'{round(100*mean_problem,2)}%')
+ax2.text(x=threshold+10,y=100*mean_problem+0.1,s=f'{round(100*mean_problem,2)}%',c='b')
 
 ax1.set_xlabel('threshold')
-ax1.set_ylabel('time loss', color='g')
+ax1.set_ylabel('time loss in minute', color='g')
 ax2.set_ylabel('Percentage of check out with delay', color='b')
 
 st.pyplot(fig)
