@@ -47,8 +47,6 @@ y1 = df_loss.iloc[:,1]
 
 y2 = df_problems.iloc[:,1]
 
-mean_problem = 1/(float(estimator_problems.predict([[threshold]])))
-
 if threshold < df_slope.iloc[0,0]:
     mean_problem = df_problems.iloc[0,1] + df_slope.iloc[0,1]*threshold
 else:
