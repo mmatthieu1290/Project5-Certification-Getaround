@@ -10,13 +10,7 @@ with open('time_losse.pkl','rb') as tl:
     time_losse = pickle.load(tl)
 
 with open('estimator_problems_inverse.pkl','rb') as est_problem:
-    estimator_problems = pickle.load(est_problem) 
-
-with open('pricing.pkl','rb') as prices_estimator:
-    pricing = pickle.load(prices_estimator)
-
-with open('preprocessor.pkl','rb') as pre:
-    preprocessor = pickle.load(pre)           
+    estimator_problems = pickle.load(est_problem)      
 
 ### Config
 st.set_page_config(
