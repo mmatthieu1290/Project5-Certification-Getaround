@@ -182,8 +182,8 @@ if choice == "Influence of threhold":
  ax2.scatter(threshold,100*mean_problem,c = 'b')
  ax2.text(x=threshold+10,y=100*mean_problem+0.1,s=f'{round(100*mean_problem,2)}%',c='b')
 
- ax1.set_xlabel('threshold')
- ax1.set_ylabel('time loss in minute', color='g')
+ ax1.set_xlabel('Threshold')
+ ax1.set_ylabel('Time loss in minute', color='g')
  ax2.set_ylabel('Percentage of check out with delay', color='b')
 
  st.pyplot(fig)
