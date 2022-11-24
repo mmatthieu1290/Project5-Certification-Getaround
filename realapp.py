@@ -73,7 +73,7 @@ if choice =="Rents with delay":
  fig,ax = plt.subplots()
 
  ax.pie(sizes, labels=labels, colors=colors, 
-        autopct='%1.1f%%', shadow=True, startangle=90)
+        autopct='%1.1f%%', shadow=False, startangle=90)
 
  ax.axis('equal')
 
