@@ -14,7 +14,7 @@ with open('estimator_problems_inverse.pkl','rb') as est_problem:
 
 ### Config
 st.set_page_config(
-    page_title="App-car-rental",
+    page_title="Dashboard-car-rental",
     layout="wide"
 )
 
