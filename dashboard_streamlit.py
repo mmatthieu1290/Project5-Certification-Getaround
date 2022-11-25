@@ -35,13 +35,13 @@ late = df_at_time_late_vs_checkin_type.loc['late'].tolist()
 #delay = pd.read_excel('get_around_delay_analysis.xlsx')
 
 choice = st.sidebar.selectbox("What do you want to see?",\
-    ["First look at the dataset","Mean delay in minutes"\
+    ["First preview of the dataset","Mean delay in minutes"\
         ,"Rents with delay","Delay versus Check-in type",\
     "Influence of threhold"])
 
-if choice == "First look at the dataset": 
+if choice == "First preview of the dataset": 
 
- st.header("First look at the dataset.")    
+ st.header("First preview of the dataset.")    
 
  st.write(pd.read_sql_query('select * from lines_of_dataset'\
 , con = connexion).sample(10))
