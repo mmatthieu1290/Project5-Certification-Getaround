@@ -58,7 +58,7 @@ if choice == "Mean delay in minutes":
  st.header("Mean delay in minutes")   
 
  st.write(pd.read_sql_query('select * from mean_late_vs_checkin_type' \
-    , con = connexion,index_col = 'checkin_type'))         
+    , con = connexion))#,index_col = 'checkin_type'))         
 
 if choice =="Rents with delay":
 
