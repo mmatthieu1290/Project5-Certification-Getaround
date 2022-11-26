@@ -1,6 +1,10 @@
 # Bloc_5
 E-mail: mathieu1290@gmail.com
 
+Dashboard with streamlit: https://mmatthieu1290-bloc-5-dashboard-streamlit-jgmoaw.streamlit.app/
+
+API: https://my-api-bloc5.herokuapp.com/
+
 Video link: 
 
 Description of the files.
