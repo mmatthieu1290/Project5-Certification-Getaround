@@ -184,7 +184,7 @@ if choice == "Influence of threhold":
 
  ax1.set_xlabel('Threshold')
  ax1.set_ylabel('Time loss in minute', color='g')
- ax2.set_ylabel('Percentage of check out with delay', color='b')
+ ax2.set_ylabel('Percentage of checkout with delay', color='b')
 
  st.pyplot(fig)
 
