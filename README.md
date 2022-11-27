@@ -19,6 +19,6 @@ estimator_problems_inverse.pkl: linear regression for the inverse of proportion 
 
 time_losse.pkl: cuadratic regression for the time of rent lossed according to the threshold.
 
-Folder app: all the file for making the API on production on heroku. The API estimates the daily price on rent thanks to a linear regression.
+Folder APIcode: all the file for making the API on production on heroku. The API estimates the daily price on rent thanks to a linear regression.
 
 Folder Notebooks: the two notebooks that I use in order to prepare the database and to fit the models.
