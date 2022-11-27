@@ -5,7 +5,7 @@ Dashboard with streamlit: https://mmatthieu1290-bloc-5-dashboard-streamlit-jgmoa
 
 API: https://my-api-bloc5.herokuapp.com/
 
-Video link: https://share.vidyard.com/watch/WXbpHUR7JScEjaxi7x6uQA?
+Video link: https://share.vidyard.com/watch/TUu7xkvKX6uokhaBZ5oTcD?
 
 Description of the files.
 
