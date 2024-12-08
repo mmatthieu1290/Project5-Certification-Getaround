@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import sqlite3
 import numpy as np
+import sklearn
 #import SessionState
 
 with open('time_losse.pkl','rb') as tl:
