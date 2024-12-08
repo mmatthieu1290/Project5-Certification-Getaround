@@ -3,3 +3,4 @@ pip==22.2.2
 pandas
 scikit-learn==1.1.1
 matplotlib
+numpy==1.26
