@@ -35,6 +35,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
+- [Description of the files](#Description-of-the-files)
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
@@ -64,7 +65,7 @@ This project aims to simplify complex rent and delay analytics, enabling data-dr
 
 **API for estimation of the price of cars:** https://my-api-bloc5.herokuapp.com/
 
-## Description of the files.
+## Description of the files
 
 **dashboard_streamlit.py:** contain the dashbord code in streamlit.
 
